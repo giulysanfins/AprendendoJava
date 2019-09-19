@@ -17,11 +17,27 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-   String car;
+   String car = null;
+   int flag=0,jao=0;
    FiatUno fiat = new FiatUno();
    Motorista motorista = new Motorista();
    Scanner entrada = new Scanner(System.in);
-   car = entrada.nextLine();
+   
+   do{
+   try{
+       
+    jao = entrada.nextInt();
+    
+    flag=0;
+   }
+   
+   catch(Exception e){
+       System.out.println("Erro");
+       flag=1;
+       entrada.nextLine();
+   }
+   }while(flag == 1);
+  
    motorista.comprarCarro(car);
    motorista.imprimirCarro(car);
     }
